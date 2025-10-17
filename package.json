@@ -16,7 +16,10 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "analyze": "cross-env ANALYZE=true next build",
-    "export": "next export"
+    "export": "next export",
+    "verify-vercel": "node scripts/verify-vercel-deployment.js",
+    "quick-check": "node scripts/quick-vercel-check.js",
+    "pre-deploy": "npm run quick-check && npm run build"
   },
   "dependencies": {
     "next": "^14.0.0",
