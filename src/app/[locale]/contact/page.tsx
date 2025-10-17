@@ -6,11 +6,14 @@ import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Textarea } from '@/components/ui/Textarea';
 import { Select } from '@/components/ui/Select';
+import { ToastContainer, useToast } from '@/components/ui/Toast';
 import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
 
 export default function ContactPage() {
   const t = useTranslations('contact');
+  const { toasts, removeToast, success, error } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     nom: '',
     email: '',
@@ -69,17 +72,53 @@ export default function ContactPage() {
     }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Formulaire de contact soumis:', formData);
-    alert('Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.');
-    setFormData({
-      nom: '',
-      email: '',
-      telephone: '',
-      sujet: '',
-      message: ''
-    });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.nom,
+          email: formData.email,
+          phone: formData.telephone,
+          subject: formData.sujet,
+          message: formData.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        success(
+          'Message envoyé !',
+          'Nous vous répondrons dans les plus brefs délais.'
+        );
+        setFormData({
+          nom: '',
+          email: '',
+          telephone: '',
+          sujet: '',
+          message: ''
+        });
+      } else {
+        error(
+          'Erreur d\'envoi',
+          result.error || 'Une erreur est survenue. Veuillez réessayer.'
+        );
+      }
+    } catch (err) {
+      error(
+        'Erreur de connexion',
+        'Impossible de contacter le serveur. Vérifiez votre connexion.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -195,8 +234,14 @@ export default function ContactPage() {
                     required
                   />
                   
-                  <Button type="submit" className="w-full" icon={<Send className="w-5 h-5" />}>
-                    Envoyer le message
+                  <Button 
+                    type="submit" 
+                    className="w-full" 
+                    icon={<Send className="w-5 h-5" />}
+                    loading={isSubmitting}
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
                   </Button>
                 </form>
               </CardContent>
@@ -390,6 +435,9 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* Toast Container */}
+      <ToastContainer toasts={toasts} onRemove={removeToast} />
     </div>
   );
 }

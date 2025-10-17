@@ -18,18 +18,17 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     };
 
     return (
-      <motion.div
-        ref={ref}
-        className={cn(
-          'card-modern',
-          paddingClasses[padding],
-          hover && 'hover:shadow-2xl cursor-pointer group',
-          className
-        )}
-        whileHover={hover ? { y: -4, scale: 1.01 } : undefined}
-        transition={{ duration: 0.2, ease: "easeOut" }}
-        {...props}
-      >
+        <motion.div
+          ref={ref}
+          className={cn(
+            'card-modern',
+            paddingClasses[padding],
+            hover && 'hover:shadow-2xl cursor-pointer group',
+            className
+          )}
+          whileHover={hover ? { y: -4, scale: 1.01 } : undefined}
+          transition={{ duration: 0.2, ease: "easeOut" }}
+        >
         {children}
       </motion.div>
     );
