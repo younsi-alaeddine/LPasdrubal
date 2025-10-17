@@ -1,6 +1,4 @@
-'use client';
-
-import Head from 'next/head';
+import { Metadata } from 'next';
 
 interface MetaTagsProps {
   title: string;
@@ -15,7 +13,7 @@ interface MetaTagsProps {
   canonical?: string;
 }
 
-const MetaTags = ({
+export function generateMetadata({
   title,
   description,
   keywords,
@@ -26,53 +24,35 @@ const MetaTags = ({
   siteName = 'Lycée Privé Asdrubal',
   noIndex = false,
   canonical
-}: MetaTagsProps) => {
+}: MetaTagsProps): Metadata {
   const fullTitle = title.includes('Lycée') ? title : `${title} | ${siteName}`;
   const fullImage = image || '/images/og-default.jpg';
   const fullUrl = url || 'https://asdrubal.edu.tn';
 
-  return (
-    <Head>
-      {/* Basic Meta Tags */}
-      <title>{fullTitle}</title>
-      <meta name="description" content={description} />
-      {keywords && <meta name="keywords" content={keywords} />}
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta charSet="utf-8" />
-      
-      {/* Canonical URL */}
-      {canonical && <link rel="canonical" href={canonical} />}
-      
-      {/* Robots */}
-      {noIndex && <meta name="robots" content="noindex,nofollow" />}
-      
-      {/* Open Graph */}
-      <meta property="og:type" content={type} />
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={fullImage} />
-      <meta property="og:url" content={fullUrl} />
-      <meta property="og:site_name" content={siteName} />
-      <meta property="og:locale" content={locale} />
-      
-      {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={fullImage} />
-      
-      {/* Additional Meta Tags */}
-      <meta name="author" content="Lycée Privé Asdrubal" />
-      <meta name="theme-color" content="#2563eb" />
-      
-      {/* Language */}
-      <meta httpEquiv="content-language" content={locale.split('_')[0]} />
-      
-      {/* Preconnect to external domains */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-    </Head>
-  );
-};
+  return {
+    title: fullTitle,
+    description,
+    keywords: keywords?.split(',').map(k => k.trim()),
+    robots: noIndex ? 'noindex,nofollow' : 'index,follow',
+    openGraph: {
+      type,
+      title: fullTitle,
+      description,
+      images: [fullImage],
+      url: fullUrl,
+      siteName,
+      locale,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: fullTitle,
+      description,
+      images: [fullImage],
+    },
+    authors: [{ name: 'Lycée Privé Asdrubal' }],
+    themeColor: '#2563eb',
+    alternates: canonical ? { canonical } : undefined,
+  };
+}
 
 export default MetaTags;

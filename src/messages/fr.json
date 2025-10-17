@@ -150,6 +150,88 @@
       "subtitle": "Découvrez notre établissement en personne"
     }
   },
+  "portal": {
+    "parent": {
+      "title": "Espace Parents",
+      "subtitle": "Accédez aux informations de votre enfant",
+      "login": "Se connecter",
+      "dashboard": "Tableau de bord",
+      "grades": "Notes et bulletins",
+      "attendance": "Absences et retards",
+      "payments": "Paiements et factures",
+      "calendar": "Calendrier scolaire",
+      "messages": "Messages de l'école"
+    },
+    "student": {
+      "title": "Espace Élève",
+      "subtitle": "Votre espace personnel d'apprentissage",
+      "login": "Se connecter",
+      "dashboard": "Tableau de bord",
+      "grades": "Mes notes",
+      "schedule": "Mon emploi du temps",
+      "homework": "Devoirs et exercices",
+      "resources": "Ressources pédagogiques",
+      "activities": "Mes activités"
+    },
+    "teacher": {
+      "title": "Espace Enseignant",
+      "subtitle": "Outils pédagogiques et gestion de classe",
+      "login": "Se connecter",
+      "dashboard": "Tableau de bord",
+      "classes": "Mes classes",
+      "students": "Liste des élèves",
+      "grades": "Saisie des notes",
+      "planning": "Planification des cours",
+      "resources": "Ressources pédagogiques"
+    }
+  },
+  "legal": {
+    "terms": {
+      "title": "Mentions Légales",
+      "subtitle": "Informations légales et conditions d'utilisation",
+      "school": "Informations sur l'établissement",
+      "hosting": "Hébergement",
+      "contact": "Contact légal",
+      "intellectual": "Propriété intellectuelle",
+      "liability": "Limitation de responsabilité",
+      "law": "Droit applicable"
+    },
+    "privacy": {
+      "title": "Politique de Confidentialité",
+      "subtitle": "Protection des données personnelles",
+      "collection": "Collecte des données",
+      "usage": "Utilisation des données",
+      "protection": "Protection des données",
+      "sharing": "Partage des données",
+      "rights": "Vos droits",
+      "cookies": "Politique des cookies"
+    }
+  },
+  "virtualTour": {
+    "title": "Visite Virtuelle 360°",
+    "subtitle": "Découvrez notre établissement en réalité virtuelle",
+    "features": {
+      "title": "Fonctionnalités de la visite",
+      "vr": "Expérience VR immersive",
+      "interactive": "Visite interactive",
+      "multilingual": "Commentaires multilingues",
+      "mobile": "Compatible mobile et tablette"
+    },
+    "sections": {
+      "title": "Sections à explorer",
+      "classrooms": "Salles de classe",
+      "library": "Bibliothèque",
+      "laboratory": "Laboratoires",
+      "playground": "Cour de récréation",
+      "cafeteria": "Cantine",
+      "sports": "Installations sportives"
+    },
+    "cta": {
+      "title": "Prêt pour une vraie visite ?",
+      "subtitle": "Planifiez une visite en personne de notre établissement",
+      "button": "Planifier une visite"
+    }
+  },
   "common": {
     "learnMore": "En savoir plus",
     "readMore": "Lire la suite",
