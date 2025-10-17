@@ -1,6 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { sendEmail, createAdmissionEmailTemplate, AdmissionFormData } from '@/lib/email';
 
+export async function GET() {
+  return NextResponse.json(
+    { 
+      message: 'API Admissions - Méthode POST requise',
+      methods: ['POST'],
+      description: 'Endpoint pour envoyer les demandes d\'admission'
+    },
+    { status: 200 }
+  );
+}
+
 export async function POST(request: NextRequest) {
   try {
     const data: AdmissionFormData = await request.json();

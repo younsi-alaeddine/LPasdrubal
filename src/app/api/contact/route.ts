@@ -1,6 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { sendEmail, createContactEmailTemplate, ContactFormData } from '@/lib/email';
 
+export async function GET() {
+  return NextResponse.json(
+    { 
+      message: 'API Contact - Méthode POST requise',
+      methods: ['POST'],
+      description: 'Endpoint pour envoyer des messages de contact'
+    },
+    { status: 200 }
+  );
+}
+
 export async function POST(request: NextRequest) {
   try {
     const data: ContactFormData = await request.json();
