@@ -1,4 +1,3 @@
-import { getTranslations } from 'next-intl/server';
 import dynamic from 'next/dynamic';
 import HeroTop from '@/components/ui/HeroTop';
 import InnovationSection from '@/components/ui/InnovationSection';
@@ -13,8 +12,7 @@ const Carousel = dynamic(() => import('@/components/ui/Carousel'), {
   loading: () => <div className="h-64 bg-gray-100 animate-pulse rounded-lg" />
 });
 
-export default async function HomePage() {
-  const t = await getTranslations('home');
+export default function HomePage() {
 
   // Données d'exemple pour les actualités
   const newsItems = [
@@ -69,26 +67,26 @@ export default async function HomePage() {
   const features = [
     {
       icon: GraduationCap,
-      title: t('features.pedagogy.title'),
-      description: t('features.pedagogy.description'),
+      title: 'Pédagogie Innovante',
+      description: 'Méthodes d\'enseignement modernes et personnalisées pour un apprentissage optimal.',
       color: 'bg-blue-500',
     },
     {
       icon: Shield,
-      title: t('features.security.title'),
-      description: t('features.security.description'),
+      title: 'Sécurité & Bien-être',
+      description: 'Environnement sécurisé et bienveillant pour l\'épanouissement de chaque élève.',
       color: 'bg-green-500',
     },
     {
       icon: Activity,
-      title: t('features.activities.title'),
-      description: t('features.activities.description'),
+      title: 'Activités Enrichissantes',
+      description: 'Programme d\'activités variées pour développer les talents et la créativité.',
       color: 'bg-purple-500',
     },
     {
       icon: Trophy,
-      title: t('features.results.title'),
-      description: t('features.results.description'),
+      title: 'Excellence Académique',
+      description: 'Résultats exceptionnels avec un taux de réussite de 98% au baccalauréat.',
       color: 'bg-yellow-500',
     },
   ];
@@ -127,7 +125,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              <span className="gradient-text">{t('features.title')}</span>
+              <span className="gradient-text">Nos Atouts</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Découvrez les innovations qui font la différence
@@ -176,14 +174,14 @@ export default async function HomePage() {
           <div className="flex justify-between items-center mb-12">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                {t('news.title')}
+                Actualités & Événements
               </h2>
             </div>
             <Link
               href="/news"
               className="text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
             >
-              {t('news.viewAll')} →
+              Voir tout →
             </Link>
           </div>
 
@@ -218,10 +216,10 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              {t('testimonials.title')}
+              Témoignages de nos Familles
             </h2>
             <p className="text-xl text-gray-600">
-              {t('testimonials.subtitle')}
+              Découvrez pourquoi nos familles nous font confiance
             </p>
           </div>
 

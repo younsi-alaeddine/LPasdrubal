@@ -1,9 +1,7 @@
-import { getTranslations } from 'next-intl/server';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { FileText, Building, Phone, Mail } from 'lucide-react';
 
-export default async function LegalTermsPage() {
-  const t = await getTranslations('legal');
+export default function LegalTermsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">

@@ -1,9 +1,7 @@
-import { getTranslations } from 'next-intl/server';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Shield, Eye, Lock, Database, Mail } from 'lucide-react';
 
-export default async function PrivacyPolicyPage() {
-  const t = await getTranslations('privacy');
+export default function PrivacyPolicyPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">

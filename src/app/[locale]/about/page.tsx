@@ -1,9 +1,7 @@
-import { getTranslations } from 'next-intl/server';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Users, Award, Globe, BookOpen, Shield, Heart } from 'lucide-react';
 
-export default async function AboutPage() {
-  const t = await getTranslations('about');
+export default function AboutPage() {
 
   const team = [
     {
