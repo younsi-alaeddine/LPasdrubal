@@ -232,6 +232,95 @@
       "button": "Planifier une visite"
     }
   },
+  "gallery": {
+    "title": "Galerie Photos",
+    "subtitle": "Découvrez la vie de notre établissement en images",
+    "albums": {
+      "title": "Albums",
+      "graduation": "Remises de diplômes",
+      "events": "Événements",
+      "activities": "Activités",
+      "facilities": "Installations",
+      "sports": "Activités sportives"
+    },
+    "filters": {
+      "all": "Toutes les photos",
+      "graduation": "Remises de diplômes",
+      "events": "Événements",
+      "activities": "Activités",
+      "facilities": "Installations"
+    }
+  },
+  "news": {
+    "title": "Actualités",
+    "subtitle": "Restez informé des dernières nouvelles du lycée",
+    "latest": "Dernières actualités",
+    "categories": {
+      "all": "Toutes les catégories",
+      "events": "Événements",
+      "achievements": "Réussites",
+      "announcements": "Annonces",
+      "activities": "Activités"
+    },
+    "readMore": "Lire la suite",
+    "publishedOn": "Publié le",
+    "author": "Auteur",
+    "tags": "Tags"
+  },
+  "schoolLife": {
+    "title": "Vie Scolaire",
+    "subtitle": "Découvrez la vie quotidienne de nos élèves",
+    "activities": {
+      "title": "Activités Extra-scolaires",
+      "sports": "Sports",
+      "arts": "Arts",
+      "clubs": "Clubs",
+      "cultural": "Activités culturelles"
+    },
+    "services": {
+      "title": "Services",
+      "cafeteria": "Cantine",
+      "transport": "Transport scolaire",
+      "medical": "Services médicaux",
+      "library": "Bibliothèque"
+    },
+    "regulations": {
+      "title": "Règlement Intérieur",
+      "download": "Télécharger le règlement"
+    }
+  },
+  "teacherPortal": {
+    "title": "Espace Enseignant",
+    "subtitle": "Outils pédagogiques et gestion de classe",
+    "login": "Se connecter",
+    "dashboard": "Tableau de bord",
+    "classes": "Mes classes",
+    "students": "Liste des élèves",
+    "grades": "Saisie des notes",
+    "planning": "Planification des cours",
+    "resources": "Ressources pédagogiques"
+  },
+  "studentPortal": {
+    "title": "Espace Élève",
+    "subtitle": "Votre espace personnel d'apprentissage",
+    "login": "Se connecter",
+    "dashboard": "Tableau de bord",
+    "grades": "Mes notes",
+    "schedule": "Mon emploi du temps",
+    "homework": "Devoirs et exercices",
+    "resources": "Ressources pédagogiques",
+    "activities": "Mes activités"
+  },
+  "privacy": {
+    "title": "Politique de Confidentialité",
+    "subtitle": "Protection des données personnelles",
+    "collection": "Collecte des données",
+    "usage": "Utilisation des données",
+    "protection": "Protection des données",
+    "sharing": "Partage des données",
+    "rights": "Vos droits",
+    "cookies": "Politique des cookies"
+  },
   "common": {
     "learnMore": "En savoir plus",
     "readMore": "Lire la suite",

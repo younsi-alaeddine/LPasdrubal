@@ -1,11 +1,9 @@
-'use client';
-
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { FileText, Building, Phone, Mail } from 'lucide-react';
 
-export default function LegalTermsPage() {
-  const t = useTranslations('legal');
+export default async function LegalTermsPage() {
+  const t = await getTranslations('legal');
 
   return (
     <div className="min-h-screen bg-gray-50">

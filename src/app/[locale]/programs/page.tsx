@@ -1,11 +1,9 @@
-'use client';
-
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import { BookOpen, Users, Clock, Award, Globe, Brain } from 'lucide-react';
 
-export default function ProgramsPage() {
-  const t = useTranslations('programs');
+export default async function ProgramsPage() {
+  const t = await getTranslations('programs');
 
   const programs = [
     {

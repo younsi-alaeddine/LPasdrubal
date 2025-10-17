@@ -232,6 +232,95 @@
       "button": "تخطيط زيارة"
     }
   },
+  "gallery": {
+    "title": "معرض الصور",
+    "subtitle": "اكتشف حياة مؤسستنا في الصور",
+    "albums": {
+      "title": "الألبومات",
+      "graduation": "حفلات التخرج",
+      "events": "الأحداث",
+      "activities": "الأنشطة",
+      "facilities": "المرافق",
+      "sports": "الأنشطة الرياضية"
+    },
+    "filters": {
+      "all": "جميع الصور",
+      "graduation": "حفلات التخرج",
+      "events": "الأحداث",
+      "activities": "الأنشطة",
+      "facilities": "المرافق"
+    }
+  },
+  "news": {
+    "title": "الأخبار",
+    "subtitle": "ابق على اطلاع بآخر أخبار المدرسة",
+    "latest": "آخر الأخبار",
+    "categories": {
+      "all": "جميع الفئات",
+      "events": "الأحداث",
+      "achievements": "الإنجازات",
+      "announcements": "الإعلانات",
+      "activities": "الأنشطة"
+    },
+    "readMore": "اقرأ المزيد",
+    "publishedOn": "نُشر في",
+    "author": "المؤلف",
+    "tags": "العلامات"
+  },
+  "schoolLife": {
+    "title": "الحياة المدرسية",
+    "subtitle": "اكتشف الحياة اليومية لتلاميذنا",
+    "activities": {
+      "title": "الأنشطة اللامنهجية",
+      "sports": "الرياضة",
+      "arts": "الفنون",
+      "clubs": "النوادي",
+      "cultural": "الأنشطة الثقافية"
+    },
+    "services": {
+      "title": "الخدمات",
+      "cafeteria": "المطعم",
+      "transport": "النقل المدرسي",
+      "medical": "الخدمات الطبية",
+      "library": "المكتبة"
+    },
+    "regulations": {
+      "title": "النظام الداخلي",
+      "download": "تحميل النظام"
+    }
+  },
+  "teacherPortal": {
+    "title": "فضاء الأستاذ",
+    "subtitle": "أدوات بيداغوجية وإدارة الفصل",
+    "login": "تسجيل الدخول",
+    "dashboard": "لوحة التحكم",
+    "classes": "فصولي",
+    "students": "قائمة التلاميذ",
+    "grades": "إدخال الدرجات",
+    "planning": "تخطيط الدروس",
+    "resources": "المصادر التعليمية"
+  },
+  "studentPortal": {
+    "title": "فضاء التلميذ",
+    "subtitle": "فضاءك الشخصي للتعلم",
+    "login": "تسجيل الدخول",
+    "dashboard": "لوحة التحكم",
+    "grades": "درجاتي",
+    "schedule": "جدولي الدراسي",
+    "homework": "الواجبات والتمارين",
+    "resources": "المصادر التعليمية",
+    "activities": "أنشطتي"
+  },
+  "privacy": {
+    "title": "سياسة الخصوصية",
+    "subtitle": "حماية البيانات الشخصية",
+    "collection": "جمع البيانات",
+    "usage": "استخدام البيانات",
+    "protection": "حماية البيانات",
+    "sharing": "مشاركة البيانات",
+    "rights": "حقوقك",
+    "cookies": "سياسة ملفات تعريف الارتباط"
+  },
   "common": {
     "learnMore": "اعرف المزيد",
     "readMore": "اقرأ المزيد",

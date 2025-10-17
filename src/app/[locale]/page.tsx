@@ -1,6 +1,4 @@
-'use client';
-
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import dynamic from 'next/dynamic';
 import HeroTop from '@/components/ui/HeroTop';
 import InnovationSection from '@/components/ui/InnovationSection';
@@ -15,8 +13,8 @@ const Carousel = dynamic(() => import('@/components/ui/Carousel'), {
   loading: () => <div className="h-64 bg-gray-100 animate-pulse rounded-lg" />
 });
 
-export default function HomePage() {
-  const t = useTranslations('home');
+export default async function HomePage() {
+  const t = await getTranslations('home');
 
   // Données d'exemple pour les actualités
   const newsItems = [
