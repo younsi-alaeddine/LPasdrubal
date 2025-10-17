@@ -6,7 +6,7 @@ interface MetaTagsProps {
   keywords?: string;
   image?: string;
   url?: string;
-  type?: string;
+  type?: 'website' | 'article' | 'book' | 'profile';
   locale?: string;
   siteName?: string;
   noIndex?: boolean;
@@ -54,5 +54,3 @@ export function generateMetadata({
     alternates: canonical ? { canonical } : undefined,
   };
 }
-
-export default MetaTags;

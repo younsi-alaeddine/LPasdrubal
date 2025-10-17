@@ -72,7 +72,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={disabled || loading}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        {...props}
       >
         {loading ? (
           <div className="flex items-center space-x-2">

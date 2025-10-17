@@ -3,8 +3,8 @@
 import { useTranslations } from 'next-intl';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
-import { Input } from '@/components/ui/Input';
-import { Textarea } from '@/components/ui/Textarea';
+import Input from '@/components/ui/Input';
+import Textarea from '@/components/ui/Textarea';
 import Select from '@/components/ui/Select';
 import { Calendar, FileText, CreditCard, CheckCircle, Clock, Users } from 'lucide-react';
 import { useState } from 'react';

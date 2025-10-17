@@ -212,7 +212,7 @@ export default function GalleryPage() {
             </h2>
             <p className="text-xl text-gray-600">
               {selectedAlbum ? 
-                `${albums.find(a => a.id === selectedAlbum)?.imageCount + albums.find(a => a.id === selectedAlbum)?.videoCount} médias` :
+                `${(albums.find(a => a.id === selectedAlbum)?.imageCount || 0) + (albums.find(a => a.id === selectedAlbum)?.videoCount || 0)} médias` :
                 `${albums.reduce((total, album) => total + album.imageCount + album.videoCount, 0)} médias au total`
               }
             </p>

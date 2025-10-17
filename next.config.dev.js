@@ -2,10 +2,8 @@ const withNextIntl = require('next-intl/plugin')('./src/i18n.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Optimisations de performance
-  experimental: {
-    optimizePackageImports: ['framer-motion', 'lucide-react'],
-  },
+  // Configuration pour le développement
+  output: undefined, // Pas de rendu statique
   
   // Configuration des images optimisées
   images: {
@@ -24,9 +22,6 @@ const nextConfig = {
   
   // Compression
   compress: true,
-  
-  // Configuration pour le déploiement
-  output: 'standalone',
   
   // Optimisation des bundles
   webpack: (config, { dev, isServer }) => {
