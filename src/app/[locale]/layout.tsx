@@ -1,10 +1,12 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { Inter } from 'next/font/google';
 import '../globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import PageTransition from '@/components/ui/PageTransition';
+import GlobalLoading from '@/components/layout/GlobalLoading';
 import { cn } from '@/lib/utils';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -27,6 +29,9 @@ export default async function RootLayout({
     notFound();
   }
 
+  // Enable static rendering
+  setRequestLocale(locale);
+
   // Providing all messages to the client
   // side is the easiest way to get started
   const messages = await getMessages();
@@ -40,13 +45,17 @@ export default async function RootLayout({
       </head>
       <body className={cn(inter.className, 'antialiased')}>
         <NextIntlClientProvider messages={messages}>
-          <div className="min-h-screen flex flex-col">
-            <Header />
-            <main className="flex-1">
-              {children}
-            </main>
-            <Footer />
-          </div>
+          <GlobalLoading>
+            <div className="min-h-screen flex flex-col">
+              <Header />
+              <main className="flex-1">
+                <PageTransition>
+                  {children}
+                </PageTransition>
+              </main>
+              <Footer />
+            </div>
+          </GlobalLoading>
         </NextIntlClientProvider>
       </body>
     </html>

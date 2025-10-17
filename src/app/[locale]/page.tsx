@@ -6,6 +6,7 @@ import HeroTop from '@/components/ui/HeroTop';
 import InnovationSection from '@/components/ui/InnovationSection';
 import SocialProofSection from '@/components/ui/SocialProofSection';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
+import { AnimatedSection, AnimatedCard, AnimatedList } from '@/components/ui/PageTransition';
 import { GraduationCap, Shield, Activity, Trophy, Users, Star } from 'lucide-react';
 import Link from 'next/link';
 
@@ -118,7 +119,7 @@ export default function HomePage() {
       <SocialProofSection />
 
       {/* Features Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+      <AnimatedSection className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
         {/* Background decorations */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary-500 rounded-full blur-3xl"></div>
@@ -126,7 +127,7 @@ export default function HomePage() {
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16 animate-fade-in">
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               <span className="gradient-text">{t('features.title')}</span>
             </h2>
@@ -135,14 +136,13 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <AnimatedList className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <div
+                <AnimatedCard
                   key={index}
-                  className="animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  delay={index * 0.1}
                 >
                   <Card hover className="text-center h-full group relative overflow-hidden">
                     {/* Gradient overlay on hover */}
@@ -165,18 +165,18 @@ export default function HomePage() {
                       </CardDescription>
                     </CardContent>
                   </Card>
-                </div>
+                </AnimatedCard>
               );
             })}
-          </div>
+          </AnimatedList>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* News Section */}
-      <section className="py-20">
+      <AnimatedSection className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-12">
-            <div className="animate-fade-in">
+            <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
                 {t('news.title')}
               </h2>
@@ -189,12 +189,11 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <AnimatedList className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {newsItems.map((item, index) => (
-              <div
+              <AnimatedCard
                 key={item.id}
-                className="animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                delay={index * 0.1}
               >
                 <Card hover className="h-full">
                   <div className="h-48 bg-gray-200 rounded-t-lg mb-4">
@@ -210,16 +209,16 @@ export default function HomePage() {
                     <p className="text-gray-600 text-sm line-clamp-3">{item.excerpt}</p>
                   </CardContent>
                 </Card>
-              </div>
+              </AnimatedCard>
             ))}
-          </div>
+          </AnimatedList>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-blue-50">
+      <AnimatedSection className="py-20 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in">
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               {t('testimonials.title')}
             </h2>
@@ -258,7 +257,7 @@ export default function HomePage() {
             showArrows={true}
           />
         </div>
-      </section>
+      </AnimatedSection>
     </div>
   );
 }

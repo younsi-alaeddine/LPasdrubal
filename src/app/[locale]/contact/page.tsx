@@ -7,13 +7,15 @@ import Input from '@/components/ui/Input';
 import Textarea from '@/components/ui/Textarea';
 import Select from '@/components/ui/Select';
 import { ToastContainer, useToast } from '@/components/ui/Toast';
+import { AnimatedSection, AnimatedCard, AnimatedList, AnimatedForm, AnimatedFormItem } from '@/components/ui/PageTransition';
+import { useFormLoading } from '@/hooks/useLoading';
 import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
 
 export default function ContactPage() {
   const t = useTranslations('contact');
   const { toasts, removeToast, success, error } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { isSubmitting, submitMessage, submitWithLoading } = useFormLoading();
   const [formData, setFormData] = useState({
     nom: '',
     email: '',
@@ -74,30 +76,34 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    
+    await submitWithLoading(
+      async () => {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.nom,
+            email: formData.email,
+            phone: formData.telephone,
+            subject: formData.sujet,
+            message: formData.message,
+          }),
+        });
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.nom,
-          email: formData.email,
-          phone: formData.telephone,
-          subject: formData.sujet,
-          message: formData.message,
-        }),
-      });
+        const result = await response.json();
 
-      const result = await response.json();
+        if (!response.ok) {
+          throw new Error(result.error || 'Une erreur est survenue. Veuillez réessayer.');
+        }
 
-      if (response.ok) {
         success(
           'Message envoyé !',
           'Nous vous répondrons dans les plus brefs délais.'
         );
+        
         setFormData({
           nom: '',
           email: '',
@@ -105,20 +111,10 @@ export default function ContactPage() {
           sujet: '',
           message: ''
         });
-      } else {
-        error(
-          'Erreur d\'envoi',
-          result.error || 'Une erreur est survenue. Veuillez réessayer.'
-        );
-      }
-    } catch (err) {
-      error(
-        'Erreur de connexion',
-        'Impossible de contacter le serveur. Vérifiez votre connexion.'
-      );
-    } finally {
-      setIsSubmitting(false);
-    }
+      },
+      'Message envoyé avec succès !',
+      'Erreur lors de l\'envoi du message'
+    );
   };
 
   return (
@@ -138,7 +134,7 @@ export default function ContactPage() {
       </section>
 
       {/* Informations de contact */}
-      <section className="py-20">
+      <AnimatedSection className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -149,28 +145,30 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <AnimatedList className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => {
               const Icon = info.icon;
               return (
-                <Card key={index} hover className="text-center">
-                  <CardHeader>
-                    <div className={`w-16 h-16 bg-gradient-to-br ${info.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                      <Icon className="w-8 h-8 text-white" />
-                    </div>
-                    <CardTitle className="text-xl font-bold">{info.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600 whitespace-pre-line">
-                      {info.content}
-                    </p>
-                  </CardContent>
-                </Card>
+                <AnimatedCard key={index} delay={index * 0.1}>
+                  <Card hover className="text-center">
+                    <CardHeader>
+                      <div className={`w-16 h-16 bg-gradient-to-br ${info.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
+                        <Icon className="w-8 h-8 text-white" />
+                      </div>
+                      <CardTitle className="text-xl font-bold">{info.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-600 whitespace-pre-line">
+                        {info.content}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </AnimatedCard>
               );
             })}
-          </div>
+          </AnimatedList>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Formulaire de contact et services */}
       <section className="py-20 bg-white">
@@ -188,7 +186,7 @@ export default function ContactPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <AnimatedForm onSubmit={handleSubmit} className="space-y-4">
                   <Input
                     placeholder="Votre nom complet"
                     value={formData.nom}
@@ -241,9 +239,9 @@ export default function ContactPage() {
                     loading={isSubmitting}
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
+                    {isSubmitting ? submitMessage : 'Envoyer le message'}
                   </Button>
-                </form>
+                </AnimatedForm>
               </CardContent>
             </Card>
 
