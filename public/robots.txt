@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://asdrubal.edu.tn/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /portal/teacher/
+Disallow: /portal/student/
+
+# Allow public portals
+Allow: /portal/parent/
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

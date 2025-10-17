@@ -1,0 +1,177 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "programs": "Formations",
+    "admissions": "Admissions",
+    "schoolLife": "Vie scolaire",
+    "news": "Actualités",
+    "gallery": "Galerie",
+    "contact": "Contact",
+    "parentPortal": "Espace Parents",
+    "studentPortal": "Espace Élève",
+    "teacherPortal": "Espace Prof"
+  },
+  "home": {
+    "hero": {
+      "title": "Lycée Privé Asdrubal — Excellence & Bienveillance",
+      "subtitle": "Former les leaders de demain avec pédagogie, sécurité et innovation. Inscrivez votre enfant dès aujourd'hui.",
+      "cta": {
+        "enroll": "S'inscrire",
+        "virtualTour": "Visite virtuelle"
+      }
+    },
+    "features": {
+      "title": "Nos Atouts",
+      "subtitle": "Découvrez les innovations qui font la différence",
+      "pedagogy": {
+        "title": "Pédagogie Innovante",
+        "description": "Méthodes d'enseignement modernes et personnalisées pour chaque élève."
+      },
+      "security": {
+        "title": "Sécurité & Bienveillance",
+        "description": "Environnement sécurisé et bienveillant pour l'épanouissement de votre enfant."
+      },
+      "activities": {
+        "title": "Activités Enrichissantes",
+        "description": "Programme d'activités extra-scolaires diversifié et stimulant."
+      },
+      "results": {
+        "title": "Excellents Résultats",
+        "description": "Taux de réussite exceptionnel et préparation aux études supérieures."
+      }
+    },
+    "news": {
+      "title": "Actualités Récentes",
+      "viewAll": "Voir toutes les actualités"
+    },
+    "testimonials": {
+      "title": "Témoignages",
+      "subtitle": "Ce que disent les parents et élèves de notre lycée"
+    }
+  },
+  "about": {
+    "title": "À Propos du Lycée Asdrubal",
+    "mission": {
+      "title": "Notre Mission",
+      "content": "Le Lycée Privé Asdrubal s'engage à offrir une éducation de qualité supérieure, combinant excellence académique et développement personnel de chaque élève."
+    },
+    "values": {
+      "title": "Nos Valeurs",
+      "excellence": "Excellence académique",
+      "respect": "Respect et tolérance",
+      "innovation": "Innovation pédagogique",
+      "community": "Esprit communautaire"
+    },
+    "history": {
+      "title": "Notre Histoire",
+      "content": "Fondé en 1995, le Lycée Asdrubal a formé des générations d'élèves avec succès, devenant une référence dans l'enseignement privé tunisien."
+    },
+    "team": {
+      "title": "Notre Équipe",
+      "subtitle": "Des professionnels passionnés et qualifiés"
+    },
+    "accreditation": {
+      "title": "Accréditations & Résultats",
+      "successRate": "Taux de réussite",
+      "graduates": "Diplômés",
+      "years": "Années d'expérience"
+    }
+  },
+  "programs": {
+    "title": "Nos Formations",
+    "subtitle": "Programmes adaptés à chaque cycle d'apprentissage",
+    "primary": {
+      "title": "Enseignement Primaire",
+      "description": "Base solide pour l'apprentissage avec méthodes ludiques et innovantes."
+    },
+    "middle": {
+      "title": "Collège",
+      "description": "Préparation progressive aux études secondaires avec accompagnement personnalisé."
+    },
+    "high": {
+      "title": "Lycée",
+      "description": "Préparation aux examens nationaux et orientation vers l'enseignement supérieur."
+    }
+  },
+  "admissions": {
+    "title": "Admissions",
+    "subtitle": "Rejoignez le Lycée Asdrubal",
+    "process": {
+      "title": "Processus d'Admission",
+      "step1": "Demande d'inscription",
+      "step2": "Entretien et évaluation",
+      "step3": "Validation et paiement",
+      "step4": "Intégration"
+    },
+    "requirements": {
+      "title": "Documents Requis",
+      "list": [
+        "Dossier d'inscription complété",
+        "Copie de l'acte de naissance",
+        "Certificats scolaires des années précédentes",
+        "Photos d'identité",
+        "Certificat médical"
+      ]
+    },
+    "fees": {
+      "title": "Tarifs & Bourses",
+      "subtitle": "Des tarifs compétitifs avec possibilité de bourses"
+    },
+    "form": {
+      "title": "Formulaire d'Inscription",
+      "studentInfo": "Informations de l'élève",
+      "parentInfo": "Informations des parents",
+      "submit": "Envoyer la demande"
+    },
+    "faq": {
+      "title": "Questions Fréquentes"
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Nous sommes là pour répondre à vos questions",
+    "info": {
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "email": "Email",
+      "hours": "Horaires d'ouverture"
+    },
+    "form": {
+      "title": "Formulaire de Contact",
+      "name": "Nom complet",
+      "email": "Email",
+      "subject": "Sujet",
+      "message": "Message",
+      "send": "Envoyer"
+    },
+    "visit": {
+      "title": "Planifier une Visite",
+      "subtitle": "Découvrez notre établissement en personne"
+    }
+  },
+  "common": {
+    "learnMore": "En savoir plus",
+    "readMore": "Lire la suite",
+    "close": "Fermer",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "required": "Champ requis",
+    "optional": "Optionnel",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "submit": "Envoyer",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "view": "Voir",
+    "download": "Télécharger",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "language": "Langue"
+  }
+}
